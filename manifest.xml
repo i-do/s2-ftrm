@@ -2,29 +2,39 @@
 <!DOCTYPE extension SYSTEM "ext-1.0.dtd">
 <!--
 /**
- * Custom Editor Toolbar
+ * Fotorama Toolbar Buttons
  *
  * @copyright (C) 2013 Roman Parpalak
  * @license http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
- * @package s2_custom_toolbar
+ * @package fotorama_button
  */
 -->
 <extension for="S2" engine="1.0">
-    <id>ftrm_button</id>
-    <title>Toolbar Button</title>
-    <version>1.0a</version>
+    <id>fotorama_button</id>
+    <title>Fotorama Toolbar Buttons</title>
+    <version>1.0c</version>
     <description>Adds buttons to the editor toolbar.</description>
-    <author>id</author>
+    <author>Roman Parpalak and Ivan Do</author>
 
     <minversion>1.0b</minversion>
-    <maxtestedon>1.0b4</maxtestedon>
-
+    <maxtestedon>1.0b5</maxtestedon>
+ 
     <hooks>
         <hook id="fn_toolbar_end">
             <![CDATA[
                 // Add fotorama container.
+                // Base.
                 $s2_custom_toolbar = '<img class="separator" src="i/1.gif" alt="" />';
-                $s2_custom_toolbar .= '<img style="background: transparent;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIhSURBVDjLY/j//z8DJZhhGBlgZ2fHnZWVVdra2vpu3rx5/2tqah7m5OSYA7EEkH0XJAaSA6kBqUUxwMjIiM3Hx6dr4sSJ/1+8ePH/7t27/w8ePPi/sbHxXnV19aGbN2/+AIkdOXLkP0gNSC1ID9wAQ0NDv+Li4g9Xr159FxERsc3b2/tPamrq/0mTJv2vrKz8D2KDxEByK1aseAhSC9KD7IKupqam75MnT0739/fnsre3/7x3797/586d+3/o0KH/a9eu/Z8xx+Jf6nzD/yA1ILUgPXADdHV1M9PT099PmzatJCgoaKejo+MvNze3/4GBgWAMYifMMPrfuDnqf/gMjf8gtSA9cAM0gcDX1/d6b2/v+1WrVr1dt27d//yltv9zF1n8T19g8j9pruH/mvWh/1ednvi/ZLX/f9c+iX+a2hpacAPU1NSYgc428PLyup+SkvIlOzv7e/Zi8/8bzk37v/bsFLDGFacn/J+wp+T/wuNd/zOWuv03bWf/rdvMyIgzfpOB/gVp7tuV/79zR/b/1m1p/xs2J/5v2pr+f8ah5v8xC2z+q9Yz/MRpQPRszf8rT034v/RE7/+Fx7r+zzvaATQk6//0Q03/05Z6/FesZbguXcnAidOAwOmKfz0nSv917hf9a93N/zduvtX/aQcb/ictdvsvX8twUbKSgZ2kpKzdzPg6fqHzf/lqhjNAzWwk5wWgk1/LVTP/F61kYEEWBwAP7or0z//OfQAAAABJRU5ErkJggg==" alt="Ссылка (откроется в новом окне)" onclick="$(\'#arttext\').text($(\'#arttext\').text().replace(/(width=\&quot;)\d+(\&quot;\W+height=\&quot;)\d+(\&quot;)/g, \'\')); InsertTag(\'<div class=&quot;fotorama&quot;>\', \'</div>\');" />'."\n\t";
+                $s2_custom_toolbar .= '<img style="background: none !important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAARklEQVR42mNkgID/DOQBRkaoZkYyDfiPzwBsrmIk1QBGSl3ASC0vMA6YCwbWAKLTAcUpkSLASI6/kdUwkqgZQy1VXUAWAAAKSSEIKB3zIAAAAABJRU5ErkJggg==" alt="Fotorama Base" onclick="InsertTag(\'<div class=&quot;fotorama&quot; data-allowfullscreen=&quot;true&quot; data-arrows=&quot;true&quot; data-click=&quot;true&quot; data-swipe=&quot;true&quot; data-nav=&quot;thumbs&quot;>\', \'</div>\'); var textArea=$(\'#arttext\'),len=textArea.val().length,start=textArea[0].selectionStart,end=textArea[0].selectionEnd,selectedText=textArea.val().substring(start,end),replacement=selectedText.replace(/(width=\&quot;)\d+(\&quot;\W+height=\&quot;)\d+(\&quot;)/g,\'\').replace(/(<img)/g, \'<img data-caption=&quot;&quot;\');textArea.val(textArea.val().substring(0,start)+replacement+textArea.val().substring(end,len));" />'."\n\t";
+                
+                // F-thumbs.
+                $s2_custom_toolbar .= '<img class="separator" src="i/1.gif" alt="" />';
+                $s2_custom_toolbar .= '<img style="background: none !important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAT0lEQVR42mNkgID/DOQBRkaoZkYyDfhPjAHYXMeIzwBCfIIuINsAXE79j8XpDIPTC/higSIDCKYDilMiRYBqBvwnEPe4+IyMaCFNKk25CwBlqi8IG0WlAAAAAABJRU5ErkJggg==" alt="Fotorama +thumbs" onclick="InsertTag(\'<div class=&quot;fotorama&quot; data-nav=&quot;thumbs&quot;>\', \'</div>\'); var textArea=$(\'#arttext\'),len=textArea.val().length,start=textArea[0].selectionStart,end=textArea[0].selectionEnd,selectedText=textArea.val().substring(start,end),replacement=selectedText.replace(/(width=\&quot;)\d+(\&quot;\W+height=\&quot;)\d+(\&quot;)/g,\'\');textArea.val(textArea.val().substring(0,start)+replacement+textArea.val().substring(end,len));" />'."\n\t";
+                                
+
+                $s2_custom_toolbar .= '<img class="separator" src="i/1.gif" alt="" />';
+                $s2_custom_toolbar .= '<img style="background: transparent;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIhSURBVDjLY/j//z8DJZhhGBlgZ2fHnZWVVdra2vpu3rx5/2tqah7m5OSYA7EEkH0XJAaSA6kBqUUxwMjIiM3Hx6dr4sSJ/1+8ePH/7t27/w8ePPi/sbHxXnV19aGbN2/+AIkdOXLkP0gNSC1ID9wAQ0NDv+Li4g9Xr159FxERsc3b2/tPamrq/0mTJv2vrKz8D2KDxEByK1aseAhSC9KD7IKupqam75MnT0739/fnsre3/7x3797/586d+3/o0KH/a9eu/Z8xx+Jf6nzD/yA1ILUgPXADdHV1M9PT099PmzatJCgoaKejo+MvNze3/4GBgWAMYifMMPrfuDnqf/gMjf8gtSA9cAM0gcDX1/d6b2/v+1WrVr1dt27d//yltv9zF1n8T19g8j9pruH/mvWh/1ednvi/ZLX/f9c+iX+a2hpacAPU1NSYgc428PLyup+SkvIlOzv7e/Zi8/8bzk37v/bsFLDGFacn/J+wp+T/wuNd/zOWuv03bWf/rdvMyIgzfpOB/gVp7tuV/79zR/b/1m1p/xs2J/5v2pr+f8ah5v8xC2z+q9Yz/MRpQPRszf8rT034v/RE7/+Fx7r+zzvaATQk6//0Q03/05Z6/FesZbguXcnAidOAwOmKfz0nSv917hf9a93N/zduvtX/aQcb/ictdvsvX8twUbKSgZ2kpKzdzPg6fqHzf/lqhjNAzWwk5wWgk1/LVTP/F61kYEEWBwAP7or0z//OfQAAAABJRU5ErkJggg==" alt="Ссылка (откроется в новом окне)" onclick="return InsertTag(\'<a target=&quot;_blank&quot; href=&quot;&quot;>\', \'</a>\');" />'."\n\t";
+
                 $toolbar = str_replace('</div>', $s2_custom_toolbar.'</div>', $toolbar);
             ]]>
         </hook>
@@ -32,9 +42,9 @@
         <hook id="idx_template_pre_replace">
             <![CDATA[
                 // Include librarys.
-                $include_files = '<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-                    <link href="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.css" rel="stylesheet">
-                    <script src="http://fotorama.s3.amazonaws.com/4.4.9/fotorama.js"></script>';    
+                $include_files = '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+                    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.css" rel="stylesheet">
+                    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.js"></script>';  
 
                 $replace['<!-- s2_styles -->'] = $include_files.(isset($replace['<!-- s2_styles -->']) ? "\n".$replace['<!-- s2_styles -->'] : '');
             ]]>
