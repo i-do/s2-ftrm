@@ -1,56 +1,64 @@
 s2-ftrm
 ==============
 
-[url=http://fotorama.io/]Фоторама[/url] — это превосходная галерея, которая умеет огромное количество всего, постоянно развивается. 
-Её разрабатывает и улучшает [url=http://fotorama.io/contact/]Артём Поликарпов[/url].
+Плагин Фоторамы для движка [S2 cms](http://s2cms.ru).
 
-К тому же она совершенно бесплатна, распространяется под лицензией [url=http://fotorama.io/license/]MIT[/url]. 
+[Фоторама](http://fotorama.io/) — это превосходная галерея, которая умеет огромное количество всего, постоянно развивается. 
+Её разрабатывает и улучшает [Артём Поликарпов](http://fotorama.io/contact/).
+
+К тому же она совершенно бесплатна, распространяется под лицензией [MIT](http://fotorama.io/license/). 
 Её можно использовать в коммерческих проектах без опаски.
 
-[b]Принцип работы[/b]
+## Принцип работы
 
-После установки плагина [url=http://artzen.ru/files/fotorama_button_1.0c.zip]fotorama_button[/url] (zip, 3 Kb) в редакторе появляются кнопки, которые делают всё, что надо. 
+После установки плагина [fotorama_button](http://artzen.ru/files/fotorama_button_1.0c.zip) zip, 3 Kb в редакторе появляются кнопки, которые делают всё, что надо. 
 Вставляете картинки, выделяете их, нажимаете кнопку — всё, галерея создана. 
 
 В шаблон автоматически подключаются JQuery и необходимые файлы Фоторамы, которые расположены на CDN-хостах. Это обеспечивает быстрый доступ к подключаемым библиотекам из любой точки мира. 
 
-[img]http://phota.me/dgtW.png[/img]
+![alt Admin area](http://phota.me/dgtW.png "Admin area")
 
-При большом желании [url=https://github.com/artpolikarpov/fotorama/releases/download/4.5.1/fotorama-4.5.1.zip]Фотораму можно скачать[/url] и залить к себе на хост. 
+При большом желании [Фотораму можно скачать](https://github.com/artpolikarpov/fotorama/releases/download/4.5.1/fotorama-4.5.1.zip) и залить к себе на хост. 
 В этом случае придется немного подправить плагин.
 
-[b]Вставка картинок, галерея[/b]
+### Вставка картинок, галерея
 
 1. Основа, просто галерея с листалкой.
 По умолчанию включена опция «развернуть на весь экран» (data-allowfullscreen="true") и поддержка тач-устройств.
 Можно добавить описание к картинке (data-caption="Описание") и тогда оно будет показываться поверх картинки.
-[code]<div class="fotorama"
+```
+<div class="fotorama"
      data-arrows="true"
      data-click="true"
      data-swipe="true"
      data-allowfullscreen="true">
   <img src="1.jpg" data-caption="One">
   <img src="2.jpg" data-caption="Two">
-</div>[/code]
+</div>
+```
 
 2. Галерея с превьюшками. Хороша с большими картинками, которые можно развернуть на весь экран.
-[code]<div class="fotorama"
+```
+<div class="fotorama"
      ...
      data-nav="thumbs">
 ...
-</div>[/code]
+</div>
+```
 
 Если указан размер для первой картинке в галерее, то Фоторама покажет все остальные картинки в этом же размере.
 
-[b]Вставка видео[/b]
+### Вставка видео
 
 Иконка не пригодилась, возникли сложности в реализации.
 При этом никто не мешает вставлять нужное руками. Фоторама работает. 
-[code]<div class="fotorama">
+```
+<div class="fotorama">
   <a href="http://youtube.com/watch?v=C3lWwBslWqg">Desert Rose</a>
   <a href="http://vimeo.com/61527416">Celestial Dynamics</a>
-</div>[/code]
+</div>
+```
 
-История версий и пример работы [url=http://artzen.ru/result/projects/s2-ext/fotorama]на странице плагина[/url].
+История версий и пример работы [на странице плагина](http://artzen.ru/result/projects/s2-ext/fotorama).
 
-Пользуйтесь и обязательно поблагодарите [url=http://fotorama.io/contact/]Артёма[/url] — он клёвый!
+Пользуйтесь и обязательно поблагодарите [Артёма](http://fotorama.io/contact/) — он клёвый!
