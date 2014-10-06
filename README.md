@@ -18,8 +18,8 @@ s2-ftrm
 
 ![alt Admin area](http://phota.me/dgtW.png "Admin area")
 
-При большом желании [Фотораму можно скачать](https://github.com/artpolikarpov/fotorama/releases/download/4.5.1/fotorama-4.5.1.zip) и залить к себе на хост. 
-В этом случае придется немного подправить плагин.
+При большом желании [Фотораму можно скачать](https://github.com/artpolikarpov/fotorama/releases/) и залить к себе на хост. 
+В этом случае придется немного подправить плагин и указать правильные пути.
 
 ### Вставка картинок, галерея
 
