@@ -12,7 +12,7 @@
 <extension for="S2" engine="1.0">
     <id>fotorama_button</id>
     <title>Fotorama Toolbar Buttons</title>
-    <version>1.0-4.6.2</version>
+    <version>1.0-4.6.4</version>
     <description>Adds buttons to the editor toolbar.</description>
     <author>Roman Parpalak and Ivan Do</author>
 
@@ -43,9 +43,9 @@
             <![CDATA[
                 // Include librarys.
                 $include_files = '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
-                    <link href="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.css" rel="stylesheet">
+                    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
                     <script>blockFotoramaData = true;</script>
-                    <script src="http://fotorama.s3.amazonaws.com/4.6.2/fotorama.js"></script>';  
+                    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>';  
 
                 $replace['<!-- s2_styles -->'] = $include_files.(isset($replace['<!-- s2_styles -->']) ? "\n".$replace['<!-- s2_styles -->'] : '');
             ]]>
